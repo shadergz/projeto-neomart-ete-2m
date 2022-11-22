@@ -1,0 +1,460 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{Implementação de Rede Corporativa pela Empresa Shelby Network no Supermercado Neomart Carpina-PE}
+
+\author{Davi Barbosa\inst{1}, Gabriel Correia (Gerente)\inst{2}, Lucas Mateus\inst{3} Vinícius Mateus}
+
+\address{Curso Técnico em Redes de Computadores --\\ Escola Técnica Maria Eduarda Ramos de Barros
+  (ETEMERB)\\
+  Caixa Postal 15.064 -- 91.501-970 -- Porto Alegre -- RS -- Brazil
+\nextinstitute
+  Curso Técnico em Redes de Computadores\\
+  Escola Técnica Maria Eduarda Ramos de Barros 
+  \email{\{nedel,flavio\}@inf.ufrgs.br, R.Bordini@durham.ac.uk,
+  jomi@inf.furb.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  The objective of the proposed project, from the structuring and implementation of a computer network inside a enterprise that planning to implement your supermarket chain in Carpina-PE town, makes own planning be influenced to choice good products and services for the specific supermarket aim, from all the management of the employers to the internal sensitive generated data security and the physical machines placed in the local. Into the workflow of the project, the topics elements will discuss pass by pass of this implementation, e.g the networking addressing, topology, choice operating systems, in-use services and the user control inside all machines and as well the backup strategy planning, with the focus in helper all those who will use these technologies.
+\end{abstract}
+     
+\begin{resumo} 
+  O objetivo do projeto proposto, da estruturação e implementação de uma rede de computadores numa empresa que tem por objetivo implantar sua rede de supermercados na zona rural no município de Carpina-PE, tenciona nosso planejamento para escolhermos bons produtos e serviços para a finalidade específica de um supermercado, desde todo o gerenciamento dos funcionários a segurança interna dos dados e das máquinas físicas disposta no local. Ao decorrer do projeto, os elementos dos tópicos irão destrinchar parte a parte dessa implementação, discutindo a rede de forma física e lógica, como por exemplo o endereçamento, topologia, sistemas escolhidos, softwares em uso e o controle de usuários nas máquinas e assim como o planejamento do backup, com o foco de ajudar todos aqueles que irão utilizar essas tecnologias.
+\end{resumo}
+
+\section{Introdução}
+A revolução tecnológica chegou pra ficar e prosperar ainda mais, ano após ano, as empresas observam e concluem que sem a Internet não há meios cabíveis de realizar a troca e a comunicação de forma segura com e priorizando as partes envolvidas, e adiante a demanda da necessidade de controlar grandes quantias de informações, é de extrema importância e necessidade possuímos uma rede de computadores de forma estruturada ao qual garanta a comunicação das máquinas prestando a usabilidade, praticidade e segurança na execução das atividades dentro dos setores. Nós da Shelby Network vamos ao longo deste projeto implementar formas práticas e meios cabíveis, uma rede de computadores estruturada para uma rede de supermercado que deseja implantar sua empresa na região de Carpina-PE, configurando e adaptando os dispositivos na rede a necessidade dos clientes e funcionários da mesma, suprindo assim a demanda do consumidor.
+\section{Shelby Network}
+Nossa empresa, a Shelby Network, tem como objetivo fornecer dispositivos e infraestrutura de TI com a melhor qualidade, eficiência na entrega e disponibilidade dos produtos e da construção ao controle dos dispositivos dentro da rede. Somos a inovação no mercado buscando sempre garantir além de bons produtos uma ótima infraestrutura de rede que possibilite uma fácil após configuração (a desejar do cliente) adaptando as necessidades de cada setor, garantimos a funcionalidade plena de todos os setores atendidos ajudando assim a sua empresa a crescer com os nossos produtos e com a nossa confiabilidade nos produtos e serviços disponibilizados.
+\section{Objetivos}
+\subsection{Geral}
+Implementar uma rede de computadores num supermercado dentro do município de Carpina PE, a empresa em questão denominada de Neomart, deseja trazer sua rede de supermercados para a região.
+\subsection{Específicos}
+Planejamento da rede lógica: criar e consolidar uma topologia de rede lógica que garanta a rapidez e o não interrompimento dos serviços disponibilizados pelo supermercado, suprindo ao mesmo tempo a segurança dos dados internos gerados pela empresa.
+Planejamento da rede física: escolher bons produtos para que os funcionários, clientes de nossa infraestrutura, sejam beneficiados pelos serviços e de tal modo aumentar sua produtividade.
+Escolha de serviços: A parte usual, sensível para os usuários e para empresa, a escolha dos softwares e serviços é essencial para cumprir com as necessidades do supermercado.
+Criação de políticas: Diversas políticas são necessárias nesse âmbito do trabalho, como políticas de senha, acesso ao servidor e etc.
+Criação do planejamento central: Vários planejamentos para a implementação são necessários, como o controle de usuário dentro da rede através das políticas de grupo.
+Planejamento da redundância: Itens como provedores de Internet, Backup dos dados gerados pelo supermercado tem que receber sua devida atenção durante o planejamento da redundância dentre as vias implementadas.
+\section{Justificativa}
+Diante das necessidades atuais por inovações na área tecnologia, é de extrema importância aderir a um sistema computadorizado, ao qual permite o acesso rápido e fácil para desde da manipulação, a conservação dos dados geridos pelos vários funcionários da empresa. Essa tecnologia de compartilhamento se dá pela redes de computadores, que se tornou algo extremamente essencial no mundo atual, a facilidade que essa tecnologia juntamente com a quantidade de serviços disponibilizados por ela tornou simples e eficaz a comunicação e a resolução de possíveis problemas que, como por exemplo, o supermercado em questão vier a ter e necessitar. Nós da Shelby Network propomos com esse projeto estruturar e configurar os meios responsáveis para que haja um padrão e a qualidade da infraestrutura que foi nos proposto resolver, assim, criando um projeto ao qual garanta a disponibilidade das necessidades do setor do supermercado à segurança dos dados sensíveis do mesmo.
+\section{Lista de Keywords}
+WI-F - Wireless Fidelity
+TI/IT - Information Technology
+SSH - Secure Shell
+ADDS - Active Directory Domain Server
+DNS - Domain Name Server
+RAM - Random Access Memory
+PC - Personal Computers
+OS - Operating System
+Mbps - Megabits per second
+VM - Virtual Machine
+DHCP - Dynamic Host Configuration Protocol
+HD - Hard Disk
+GPO - Group Policy Objects
+VPN - Virtual Private Network
+\section{Sistemas Operacionais}
+Através da proposta que nos foi concedida foi-se pensado em trabalharmos com o sistema operacional Windows 10 Pro para os funcionários que irão atender os caixas, setores administrativos integrando também o SAC e com o sistema Debian  GNU/Linux e Windows Server para os servidores, compondo assim o ambiente integrado de TI. A justificativa da escolha dos sistemas operacionais são esclarecidas abaixo.
+\subsection{Windows 10 Pro}
+Windows 10 Pro - Optado por fornecer tecnologias em que a integridade de dados da empresa prevalece com o sistemas  BitLocker  na qual criptografa os recursos presentes nos HD(s), assim protegendo as informações do Windows. Também deve ser mencionada a sua política de grupo que se dá em forma de regras de segurança e rede para diferentes usuários.
+\subsection{Windows Server}
+Para prover a confiabilidade e a integridade dos setores e dos funcionários envolvidos em cada um deles, o Windows Server Essential irá possuir e fornecer o serviço do Active Directory (ADDS), podendo assim, gerenciar todas as máquinas clientes envolvidas dentro da rede interna com a ajuda do servidor Debian suprindo as demais funcionalidades.
+\subsection{Debian Server GNU/Linux}
+Com a tecnologia oferecida pela comunidade do Debian, os demais clientes e o servidor Windows Server irão se beneficiar dos serviços oferecidos pelo servidor previamente configurado, fornecendo assim os serviço de DNS; SSH e o próprio SAMBA, que irão possibilitar a comunicação com as máquinas Windows e com a integração entre os dois servidores dentro do setor de TI.
+\section{Serviços Disponibilizados na Rede}
+Selecionamos os melhores serviços para disponibilizar a melhor experiẽncia dentro da rede do supermercado. Segue a lista abaixo do que se trata juntamente com o esclarecimento do porque escolhemos tais serviços.
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline
+Serviço & Identificador & Disponibilidade\\
+\hline
+Firewall & 1 & Local\\
+Antivírus & 2 & Local\\
+VPN & 3 & Externa\\
+Servidor de Arquivos & 4 & Local\\
+Armazenamento em Nuvem & 5 & Local\\
+SSH & 6 & Local\\
+DNS & 7 & Local\\
+DHCP & 9 & Local\\
+Samba & 10 & Local\\
+Servidor Web e Proxy & 8 & Local\\
+ADDS & 11 & Local\\
+Hotspot & 12 & Local\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Firewall}
+Optamos por serviços de Firewall adequados tanto para as máquinas locais quanto da própria rede por ser um componente extremamente importante, os seguintes softwares serão utilizados: Windows Firewall e ufw, para suprir nossas necessidades locais nas demais máquinas dos setores e inclusive o do TI. Já para a rede optamos por utilizar um dispositivo de Firewall chamado Fortinet FortiGate do modelo 101F FG-101F.
+\subsection{Antivírus}
+O serviço de antivírus que utilizaremos é o Norton este serviço possui um console e será gerenciado pelo servidor, além de está em plena execução em todas as máquinas dos funcionários ao qual executam o sistema Windows, o objetivo da implementação é garantir uma melhor utilização dos recursos das máquinas, a supervisão sobre as máquinas, a proteção real oferecida pela solução e a capacidade de agendar o fluxo de verificação analítica (que decorre mais tempo e é de extrema importância a não interrupção dos funcionários em tempo de serviço). O plano de verificação analítica propõem o gerenciamento deste fluxo.
+\subsection{VPN}
+O serviço de VPN utilizado é o NordVPN, por sua popularidade, facilidade, e pelo fácil e rápido suporte técnico. Com o NordVPN podemos trafegar informações confidenciais criptografadas para o mundo externo de maneira segura e rápida. O serviço da Nord será implementado no Routerboard, garantindo assim um acesso seguro à Internet.
+\subsection{Servidor de Arquivos}
+O servidor de arquivos é essencial para o armazenamento das informações dos usuários dentro da rede, proporcionando versatilidade já que o mesmo cliente pode realizar o logon com seu usuário em qualquer computador que desempenhe esta função e automaticamente ter sua área de trabalho inteira transferida para aquele computador de uma maneira quase instantânea. Para esta realização criamos um diretório no servidor no disco \textbf{“C:/Funcionarios”} ao que contém o ADDS (Servidor Windows Server Pro) com o nome de cada setor, e através da ferramenta chamada “Gerenciador de Recursos de Servidor de Arquivo” adicionamos as entradas para cada tipo de backup em referência ao setor em específico.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{adds-pasta-compartilhada.png}
+\caption{Estrutura de diretórios no servidor ADDS}
+\label{fig:adds-pastas}
+\end{figure}
+\subsubsection{Armazenamento em Nuvem}
+O armazenamento em nuvem será fornecido através do serviço Google Drive  com o plano Business Standard, através de seu dashboard será capaz de analisar, mensurar e realizar o backup a partir do servidor de arquivos.
+\subsection{SSH}
+Para a utilização remota dos servidores utilizaremos o openssh para realizar a comunicação de maneira segura e autêntica, garantindo a confiabilidade e o registro (log) do acesso dos administradores ao servidor Linux.
+\subsection{DNS}
+As máquinas e por extensão os servidores, são identificados através da rede de computadores por um número composto de 4 octetos chamado de IP, por conveniência, temos facilidade de decorar nomes (mnemônicos, siglas, acrônimos), no caso, nomes de domínio como o google.com, ao invés de seu endereço IP para navegar na Internet, facilitando assim o uso pelas pessoas. O DNS não só serve para identificar domínios, como já mencionado podemos utilizá-lo para identificar máquinas e é o que faremos com o serviço DNS dentro da nossa rede, iremos identificar todos as máquinas conectados na rede por seu hostname, reconhecido pelo DNS Server disponibilizado pelo servidor Linux.
+\subsection{DHCP}
+Um serviço DHCP é normalmente encontrado em um roteador, seu principal objetivo é compartilhar IP(s) para aqueles que desejam entrar (join) na rede, o DHCP é altamente configurável ao ponto de definirmos um range (escala), um tempo máximo em que o dispositivo comum possa usar aquele IP e dispositivos de IP estático, ou DHCP utilizará o endereço MAC do dispositivo para anexar a ele um IP estático.
+Para evitar o desgaste de configurar cada dispositivo (impressoras e os computadores) dentro de uma rede onde há a necessidade de haver IP(s) estáticos (como é o caso dos servidores que irão atuar nos IP(s) 192.168.56.2/26 e 192.168.56.3/26) utilizaremos o serviço chamado DHCP no Gateway que fornece os IP(s) automaticamente para os dispositivos conectados dentro da rede disponibilizado pelo roteador MikroTik no endereço 192.168.56.1/26, o serviço DHCP irá disponibilizar os IP(s)  de forma dinâmica dentro da faixa (192.168.56.11/26 até 192.168.56.254/26) para os funcionários, há em anexo a lista do tipo de disponibilidade utilizada por cada componente dentro da rede. O tempo máximo da posse do IP por dispositivo é de 5 dias exatos.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{roteador-dhcp-range.png}
+\caption{Configuração do DHCP}
+\label{fig:dhcp}
+\end{figure}
+\subsection{Samba}
+O Samba é um serviço utilizado através do GNU/Linux em conjunto ao ADDS, possibilitando o controle e o uso integrados de ambos os serviços. O Samba será executado no mesmo servidor onde o DNS está sendo executado, o Debian.
+\subsection{Web e Proxy}
+Para o servidor de Proxy, utilizaremos o serviço squid no servidor Debian Linux, através dessa ferramenta seremos capazes de manipular o nó de saída da comunicação interna da rede. O squid trabalha com os seguintes serviços dentro de uma rede: HTTP, HTTPS, FTP; balanceando a carga entre esses serviços. Já sobre o serviço Web, utilizaremos o NGINX para hospedar o site da organização, além disso vamos configurá-lo como mostrado abaixo para permitir a configuração das portas de “atendimento” do serviço, do controle de conexões simultâneas e da política de bloqueio pré estabelecida pelo projeto para garantir a segurança da rede interna da empresa.
+\subsection{ADDS}
+(Active Directory Domain Service) É onde será implementado informações de acesso sobre o ambiente, incluindo os usuários e computadores existentes, definindo também as permissões de cada usuário dentro do sistema. Através dele é que será verificado o fator de Autenticidade ou seja se a pessoa realmente é quem ela afirma ser.
+Dentro de uma rede o sistema de domínio é crucial, porque através dele há uma conjunção adequada e controle sob centenas de usuários e suas devidas permissões cabíveis concebidas durante a instalação e configuração dos sistemas. Através dele iremos configurar os setores distribuídos como grupos de usuário e definir suas regras e políticas de uso para cada grupo, já que cada grupo tem propósitos diferentes, resultando assim em uma divisão de atividades e prioridades.
+Através do AD, somos capazes de distinguir os grupos perante a suas atividades exercidas dentro da empresa. Por exemplo, podemos definir uma regra básica que ajudem aos funcionários do setor do caixa a executar automaticamente o software de gestão empresarial, possibilitando aos funcionários com poucos cliques “Inicializar a sua área de trabalho”, além do já mencionado capacidade de  mover a área de trabalho de cada usuário nos computadores que fornecem aquele mesma classe de função.
+\subsection{Hotspot}
+Acesso a internet é algo primordial para os dias atuais, mas embora isso seja verdade, nem sempre estamos conectados a ela por meio de uma comunicação sem fio. Por isso, podemos aproveitar dessa incapacidade e implementar um sistema Wireless local, ao qual os clientes no supermercado possam acessar a Internet de maneira que também beneficie o supermercado. É através de um roteador conhecido como hotspot que podemos disponibilizar a rede WI-FI apenas para os usuários que realizarem o check-in no Facebook por exemplo, ou que ao conectar, forneça um método de cadastro onde o usuário deve informar o seu endereço de E-mail por exemplo, e logo após isso, liberar a internet.\newline
+Utilizaremos no projeto um roteador da Intelbras do modelo Hotspot 300, ele fornece uma interface de comunicação onde o usuário deve para poder ter acesso a internet, realizar o check-in na página do supermercado Neomart no Facebook.
+\section{Controle de Usuários}
+O controle de usuários, realizado no ADDS, nos beneficia desde a criação a administração destes usuários. Os usuários ficaram dispostos em sua unidade organizacional que obedece o seu setor em específico, cada unidade organizacional possui um grupo ao qual possui todos os usuários da unidade em específica, possibilitando de uma maneira mais fácil gerir as permissões destes usuários. Abaixo exibimos um exemplo de como isso funcionará:
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{adds-unidades-usuarios.png}
+\caption{Grupos de usuários no ADDS}
+\label{fig:adds-pastas}
+\end{figure}
+\subsection{Implementação do GPO}
+O Group Policy (GPO), políticas de grupo ou diretivas de grupo, é através deste recurso que vamos configurar as políticas de cada grupo dentro do domínio. As configurações ficarão predispostas de acordo com a necessidade dos setores:
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline
+Setor & Permissões (Nível de privilégio)\\
+\hline
+TI & 0\\
+BackOffice & 1\\
+SAC & 1\\
+Caixa & 2\\ 
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+    \item Nível 0: Pode realizar qualquer modificação a nível de administrador das máquinas dentro dos demais setores.
+    \item Nível 1: É proibido a instalação/remoção de programas dentro das máquinas. É proibido a alteração das configurações de redes dos computadores.
+    \item Nível 2: É proibido o poder de gravação do usuário em mídias graváveis, como por exemplo (Pendrive, HD/SSD); É proibido alterar o plano de fundo da máquina. - INCLUI TODAS AS RESTRIÇÕES DO NÍVEL 1
+\end{enumerate}
+\subsection{Demonstração da implementação das políticas de grupo}
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{adds-regras.png}
+\caption{Regras do controle de usuários no ADDS}
+\label{fig:adds-pastas}
+\end{figure}
+\section{Endereçamento IP}
+Para uma segurança e um maior controle sobre os computadores do setores, criamos a seguinte rede: 192.168.56.0/26, onde o Gateway possuirá o serviço DHCP operando no endereço 192.168.56.1/26.
+Detalhes sobre a rede: São fornecidos 62 IP(s) para os hosts dentro de 4 sub-redes, totalizando 248 hosts válidos. Todos os computadores e outras máquinas internas ficaram disposta na primeira sub-rede, indo de 192.168.56.2 até 192.168.56.62, dentro dos IP(s) disponibilizados na primeira sub rede, 10 deles serão exclusivos para os computadores com os servidores internos do setor de TI e as impressoras, este range de IP não serão controlados pelo DHCP, nas seguintes faixas exibimos o layout do endereçamento (primeira sub-rede):
+\begin{center}
+\begin{tabular}{| l | r | r | r | r |}
+\hline 
+Setores & Faixas & Utilizados & Disponíveis & Modo\\
+\hline
+Servidores & .1/26 - .10/26 & 2 & 60 & Estático\\
+PC(s) TI e Impressoras & .1/26 - .10/26 & 6 & 54 & Estático\\
+Caixas & .11/26 - .62/26 & 15 & 36 & Dinâmico\\
+BackOffice & .11/26 - .62/26 & 15 & 21 & Dinâmico\\
+SAC & .11/26 - .62/26 & 8 & 13 & Dinâmico\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Detalhes adicionais}
+Dentro da primeira sub-rede, 13 IP(s) estarão disponíveis para os demais dispositivos externos.
+\section{Estrutura da Rede}
+\subsection{Cabeamento}
+A rede cabeada que utilizaremos é com base na comunicação Fast Ethernet podendo alcançar até 100 Mbps em taxa de transferência das comunicações, os provedores de Internet escolhidos, juntamente com a seleção dos equipamentos ativos da rede, garantiram a não perda das informações ou uma alta latência da conexão durante o horário de pico do supermercado. Utilizaremos na instalação do cabeamento par-trançado do tipo CAT-6 com espessura máxima de 915 metros, que interliga-rá todos os equipamentos ativos da rede, dos computadores as impressoras, cada setor possuirá um switch que interliga-rá as máquinas, os switch(s) por sua vez iram se conectar-se ao switch “central” do setor de TI, onde poderemos manipular e controlar cada setor com uma faixa de IP(s) fornecida pelo serviço DHCP desejada.
+\subsection{Estratégica de RAID}
+O tipo de RAID e a forma que utilizaremos dentro dos servidores, será aplicado utilizando a estratégia tecnologia do RAID 10 que consiste em fragmentar as informações dividindo-as sobre os dois discos rígidos que por sua vez irão através do módulo controlador, replicar sua informações para outros 2 discos mantendo-o sempre atualizados e possibilitando uma possível recuperação local dos dados dos demais discos. Em caso de danos de mais de 2 (dois) discos, será necessário realizar uma recuperação a partir do Armazenamento em Nuvem utilizado na infraestrutura de redes.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{RAID10.png}
+\caption{Configuração de RAID}
+\label{fig:adds-pastas}
+\end{figure}
+\subsection{Redundância e Disponibilidade Dentro da Rede}
+\subsubsection{Links e Provedores}
+Para o pleno funcionamento garantindo a disponibilidade dos serviços será proposto 2 links de internet: Planalto Net e Piernet, ambos localizados em Carpina com boas recomendações, o preço dos links estão dispostos no orçamento de rede do projeto.
+\subsubsection{Memória Adicionais}
+Para uma rápida manutenção corretiva, incluímos diversos pentes e discos de armazenamento adicionais, para que haja um estoque rápido de componentes para agilizar a correção de problemas corriqueiros dentro do servidor.
+\subsubsection{Segurança Física e Redundância nos Servidores}
+Optamos por utilizar um sistema de ponto, onde a partir dele obteremos o controle e o log dos funcionários do setor de TI, por meio dele poderemos ter o controle do acesso físico as máquinas especializadas em controlar as demais dentro da empresa. No que se trata da redundância nos servidores, utilizaremos componentes adicionais, que são eles HD(s): 8x4TB; Pente de Memórias: 8x8GB. Estes componentes adicionais ficaram guardados em um local estocável de forma segura para uma possível substituição no futuro se caso algum problema ocorrer. Disponibilizamos de um Nobreak que possui 4 portas, sendo duas delas ocupadas pelos servidores, fornecendo a proteção elétrica, garantindo o isolamento e evitando quedas ou desligamento acidental da fonte de energia.
+\subsubsection{Nobreak}
+Para evitar picos e quedas de energia, um Nobreak será instalado nos servidores, garantindo a não interrupção e a não corrupção dos documentos que ainda não foram feitos o backup, ou que ainda estão em espera pelo procedimento. Mantendo o coração da rede vivo, podemos nos preocupar com a elaboração das medidas aprofundadas para os demais computadores da rede.
+\subsection{Políticas de Segurança da Informação (PSI)}
+As políticas de segurança estão voltadas a ampla utilização das máquinas e dos servidores dispostos na rede, os funcionários devem seguir as políticas dentro dos seus respectivos setores, o objectivo central das políticas é de estabelecer padrões de condutas para desde a utilização virtual através do uso de software a utilização físicas, desde da adaptação e separação dos componentes envolvidos.
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline 
+ID da Política & Políticas\\
+\hline
+1 & Criação de Senhas\\
+2 & Trocas de Senhas\\
+3 & Armazenamento de Senhas\\
+4 & Níveis de Acesso\\
+5 & Uso dos Computadores\\
+6 & Encriptação de Dados\\
+7 & Prevenção Contra Ransomware\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Detalhes das políticas de segurança}
+\subsubsection{Criação de Senhas}
+Criação de Senhas: Cada usuário terá que redefinir sua senha, que deverá respeitar o seguinte padrão: Ser formada de no mínimo 12 caracteres, a senha deve conter ao menos uma letra maiúscula e um número. Essa política é de extrema importância porque a partir dela garantimos uma maior segurança e controle  dentro da rede interna.
+\subsubsection{Troca de Senhas}
+Troca de senhas: Os funcionários devem trocar suas senhas dentro de 60 dias, mais ou menos, 2 meses. Além disso, o funcionário não pode reutilizar as últimas 10 senhas previamente utilizadas em seu usuário.
+\subsubsection{Armazenamento de Senhas}
+As credenciais de acesso de todos os funcionários serão armazenadas em um sistema, de modo em que apenas as pessoas autorizadas terão acesso, com isso elas estarão livres de eventuais perdas de dados já envolvendo a questão do não repúdio.
+\subsubsection{Níveis de Acesso}
+Cada grupo de funcionários terá seu nível de privilégio dentro do sistema limitando também o acesso deles a rede interna. Políticas como essas dão a possibilidade de gerenciar os dados produzidos pelos mesmos em sua máquina local gerenciando também o desempenho de cada funcionário, proporcionando também uma forma viável de realizar o controle das informações que trafegam por elas.
+\subsubsection{Encriptação de Dados}
+Os dados internos como os de faturamentos, Indicadores e Contratos com parceiros por exemplo serão criptografados para uma maior segurança com tais dados referentes à empresa serão armazenados em servidores de domínio próprio, com isso garantimos a segurança da confiabilidade dos dados produzidos e distribuídos para a Internet. Utilizaremos o software VeraCrypt para encriptar os dados no fluxo.
+\subsubsection{Uso dos Computadores}
+Os usuários deverão respeitar as condutas de uso dos computadores, que são elas: Não plugar dispositivos de armazenamento, como: Pendrive, HD/SSD externos à máquina; Ao sair da máquina, bloquear-la para evitar possíveis ataques físicos de terceiros à máquina; Reportar potenciais problemas tanto de Software quanto de Hardware ao funcionários do setor de TI.
+\subsection{Prevenção de Ransomware}
+Utilizando uma estrutura simples e ao mesmo tempo confiável de Backup e Antivírus com o gerenciamento de nível de acesso, irão possibilitar uma proteção rígida contra eventuais ataques de Ransomware que possam vir do mau uso dos computadores pelos funcionários.Evitando assim possíveis vazamentos ou roubo de dados.
+\subsection{Plano de contingência}
+Nos dias atuais, se tornou um grande problema algo conhecido como RaaS (Ransomware as a Service) ou Ransomware como serviço, é um tipo de malware extremamente danoso para as empresas e organizações, pois os criminosos que realizam este tipo de ataque tem por objetivo criptografar as informações que são demasiadamente importantes para as empresas e cobrar um ou mais resgates pela mesma, e o maior problema é que o mecanismo de segurança quebrada que possibilita este tipo de invasão é feita de dentro da empresa, por algum funcionário mal intencionado que deseja através do ataque, extorquir a empresa com a ajuda dos atacantes, para se proteger é extremamente importante ter um backup adequado e controlar a entrada e o controle de acesso aos servidores internos de maneira extremamente efetiva.
+\section{Topologia Final}
+\section{Virtualização}
+A virtualização é um método criado para fornecer máquinas virtuais, ou seja, que rodam em modo software sobre uma máquina hospedeira. Uma solução adequada ao mercado é a implantação do serviço hipervisor Proxmox. O Proxmox é gratuito e de código aberto, e por rodar em um sistema GNU/Linux nos garante a confiabilidade e disponibilidade do serviço e a partir dele podemos construir nosso ambiente da maneira mais adequada e estruturada possível (mostrada nos benefícios do ambiente virtual).
+\begin{enumerate}
+    \item É gratuito (Livre e de código aberto).
+    \item Ajustável ao esquema de RAID 10.
+    \item Sendo um hipervisor (Fornece abstrações de sistemas de arquivos, endereço MAC e outros).
+    \item Altamente responsivo (Permite o administrador gerenciar e visualizar o uso dos recursos como CPU, RAM e Armazenamento).
+    \item Sistema completo de Backup das máquinas.
+    \item Gerenciamento das máquinas através da rede.
+\end{enumerate}
+\subsection{Benefícios da Virtualização}
+A partir da virtualização podemos construir um ambiente de testes chamado também de homologação, onde podemos testar novas configurações antes de implantar no ambiente produtivo, no neǵocio em si. Tudo isso resultará em um ambiente rápido e produtivo. Os principais benefícios são:
+\begin{enumerate}
+    \item Reduzir custos na compra de Hardware.
+    \item Diminuir o tempo de implementação.
+    \item Reusar e distribuir recursos do servidor.
+    \item Manter os ambientes reais seguros.
+    \item Consolidar projetos.
+\end{enumerate}
+\section{Plano de Backups}
+Estabelecer um plano de backup eficiente visando reter de maneira eficiente e de forma incremental os dados gerados pelas máquinas dos setores dispostos tanto dentro quanto fora da empresa, nós propomos as seguintes divisões sobre o plano de Backups para possibilitar sua realização sem transtornos adicionais ou imprevistos, esses são: Esquematização dos Backups; Política de Backups; Materiais Necessários; Serviços Necessários;
+\subsection{Esquematização dos Backups}
+Para uma boa lógica de backup, é de extrema necessidade propor a estratégia utilizada para ir desde da escolha à realização do backup dentro de um ambiente corporativo. Itens como: Modelo de Backup; Periodicidade; Prioridade dos Dados; Criptografia Utilizada no Backup.
+\subsection{Política de Backup}
+Estabelecemos essas políticas com base nas necessidades dentro do setor do supermercado, com o objetivo de elucidar as normas e o meio para a realizar o backup de modo eficiente e seguro.
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline 
+Id da Política & Política & Modo de Backup\\
+\hline
+1 & Modelo do Backup & Incremental\\
+2 & Periodicidade & Diariamente\\
+3 & Prioridade dos Dados & Documentos e Dados do Sistema\\
+4 & Criptografia Utilizada & Simétrica (Cloud também)\\
+\hline
+\end{tabular}
+\end{center}
+\subsubsection{Modelo de Backup}
+Propomos a utilização do modelo diferencial, neste modelo de backup é necessário um backup completo das máquinas na primeira execução do plano de backup, após isso, no dia a dia, somente os dados que foram gerados pelas máquinas serão copiados, aumentando assim a eficiência no quesito de velocidade e consumo de rede no que cabe às máquinas dos setores.
+\subsubsection{Periodicidade}
+Será realizado Diariamente através de um script programado para realizar o backup diariamente sem que haja a necessidade de ter que fazê-lo manualmente, o mesmo fará tal backup com cerca de 3H de antecedência antes de começar o expediente, para que assim não haja interferência na demanda do dia a dia. 
+\subsubsection{Prioridade dos Dados}
+É necessário estipular com os demais setores os dados que são de importância para os setores em questão, nem todo tipo de informações criadas pelos funcionários são de importância para o funcionamento da empresa, levando em consideração a não necessidade dos mesmos de possuírem um backup com ou sem versionamento dentro dos servidores corporativos. Ademais, alertar sobre o uso do servidor de arquivos é de extrema importância para os dados considerados importantes para empresa aos funcionários.
+\subsubsection{Criptografia Utilizada nos Backups}
+\subsection{Materiais Necessários}
+Utilizaremos o software chamado “Cobian Backup” para realizar a nossa esquematização de backup de forma automática, o software por sua vez irá se encarregar de testar nosso ambiente atual e a partir da configuração previamente realizada, irá decidir se o backup incremental ou o total é necessário para o dia da semana em questão. Para a realização do backup é de extrema importância possuirmos espaço extra para realizar os backups totais e incrementais, e tentando armazená- los pelo maior tempo possível e de novo, o Cobian nos ajudará a manter esta proposta. 
+Para a criptografia utilizaremos o já mencionando VeraCrypt
+\section{Confidencialidade das Informações}
+Um fator crucial que deve-se ser pensado é a questão de como será elaborado e posicionado sobre a questão da confidencialidade em que os funcionários deverão seguir mediante informações interligadas ao supermercado Neomart. Contudo os funcionário deverão assinar um termo de confidencialidade juntamente ao seu contrato de trabalho, na qual esteja explícito a política do não vazamento das informações transitada dentro do ambiente de negócios da empresa, ações como (Fotos; Gravações;), caso o funcionário acabe vazando tais dados, ele poderá ser altamente prejudicada com até mesmo sua própria demissão, ou em casos ainda mais graves, responder judicialmente.
+\section{Termo de confidencialidade de senhas}
+Os funcionários terão por obrigação, diante de sua função, assinar um termo de responsabilidade sobre a perda e o possível furto de suas senhas e a da não divulgação mediante aviso prévio, além de terem que responder um questionário sobre boas práticas desde do uso a criação e do armazenamento de senhas dentro e fora do computador e do ambiente de trabalho. Cada funcionário deverá estar ciente de seus atos dentro e fora da empresa, além de terem que respeitar as políticas envolvidas.
+\section{Orçamentos}
+\subsection{Softwares}
+\begin{center}
+\begin{tabular}{| l | r | r | r | r |}
+\hline 
+Software & Quantidade & Licenciamento & Valor Unitário (R\$) & Valor Total (R\$)\\
+\hline
+Norton Small Business & 2 & 2 Anos & 766.00 R\$ & 1532.00 R\$\\
+Debian Server & 1 & Vitalício & - & Gratuito\\
+Windows 10 Pro & 38 & Vitalício & 819,00 R\$ & 31.122,00 R\$\\
+Server 2019 Essentials & 1 & Vitalício & 2.989,00 R\$ & 2.989,00 R\$\\
+Office 365 Enterprises & 38 & Mensal & 76,80 R\$ & 2.918,40 R\$\\
+CCleaner & 38 & Vitalício & - & Gratuito\\
+NordVPN & 1 & 2 Anos & 1.719,90 R\$ & 1.719,90 R\$\\
+VeraCrypt & 1 & Vitalício & - & Gratuito\\
+Cobian Backup & 38 & Vitalício & - & Gratuito\\
+Proxmox & 1 & Vitalício & - & Gratuito\\
+Squid & 1 & Vitalício  & - & Gratuito\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Recursos e Serviços de Rede}
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline 
+Hardwares e Serviços & Quantidade & Valor Unitário & Valor Total\\
+\hline
+Planalto Net Link de Internet & 1 & 149,00 R\$ & 149,00 R\$\\
+Piernet Link de Internet & 1 & 125,00 R\$ & 125,00 R\$\\
+Rolo de Cabo - CAT-6 (~300 metros) & 3 & 469,00 R\$ & 1.407,00 R\$\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Hardwares}
+\begin{center}
+\begin{tabular}{| l | r | r | r | r |}
+\hline 
+Hardware & Quantidades & Valor Unitário & Valor Total & Referenciado\\
+\hline
+Computadores Desktop (10° Geração) & 38 & 2.398,88 R\$ & 91.157,22 R\$ & KaBuM!\\
+Notebook & 2 & 3.059,10 R\$ & 6.118,20 R\$ & Extra\\
+Servidores & 2 & 6.199,99 R\$ & 12.39998 R\$ & KaBuM!\\
+HD 4TB (Redundância) & 8 & 449,99 R\$ & 3.599,92 R\$ & KaBuM!\\
+Memória RAM (Redundância) & 8 & 199,99 R\$ & 1.599,92 R\$ & KaBuM!\\
+Impressoras \& Monocromática & 4 & 2.199,99 R\$ & 8.799,96 R\$ & KaBuM!\\
+Nobreak \& (Para os servidores) & 1 & 389,99 R\$ & 389,99 R\$ & KaBum!\\
+Relógio de Ponto & 2 & 249,90 R\$ & 499,80 R\$ & Magazine Luiza\\ 
+Impressora Térmica & 15 & 179,03 R\$ & 2.685,45 R\$ & Magazine Luiza\\
+Leitor de Código de Barras & 15 & 97,89 R\$ & 1.468,35 R\$ & Magazine Luiza\\
+Roteador Mikrotik & 1 & 529,99 R\$ & 529,99 R\$ & KaBuM!\\
+Switch & 4 & 755,10 R\$ & 3.020,4 R\$ & KaBuM!\\
+Ponto de Acesso & 1 & 159,13 R\$ & 318,26 R\$ & Americanas\\
+Roteador Hotspot & 1 & 160,55 R\$ & 160,55 R\$ & Nagem\\
+Leitor de Fitas & 1 & 3.327,00 R\$ & 3.327,00 R\$ & Dell\\
+Dispositivo de Firewall & 1 & 35.000,00 R\$ & 35.000,00 R\$ & Americanas\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Justificativa do porque optamos pelos principais Hardwares}
+\subsubsection{Computadores Desktop}
+Optamos por essa máquina devido a sua atual tecnologia composta, pois com tal configuração atenderá facilmente as rotinas de trabalho visando um ótimo custo benefício sem que haja a necessidade de fazer upgrades em um curto período de tempo. Configuração dos computadores:
+\begin{enumerate}
+    \item Processador: Intel Core i3-10100F
+    \item Memória RAM: 8GB
+    \item Armazenamento: HD: 500GB
+\end{enumerate}
+\subsubsection{Servidores}
+Os servidores escolhidos serão utilizados para controlar os usuário e fornecer diversos serviços dentro da empresa, por causa disso optamos por servidores de alto desempenho que compõem os seguintes Hardwares:
+\begin{enumerate}
+    \item Processador: Intel Xeon E-2224G 4C
+    \item Memória RAM: 8GB
+    \item Armazenamento 1TB (Expansível até 4 discos de 4TB)
+\end{enumerate}
+\subsubsection{Switch}
+O dispositivo utilizado é da TP-link, na qual a mesma é referência. E o equipamento possui todas as características necessárias para o projeto, como possuir 16 portas RJ-45.
+\subsubsection{Hotspot}
+O dispositivo foi escolhido com o foco na plasticidade e confortabilidade, já que o requisito para acessar a internet, a realização do check-in no Facebook, é uma tarefa prática e fácil além da configuração do roteador ser bastante facilitada pelo próprio sistema da Intelbras.
+\subsubsection{Leitor de Fitas}
+O Leitor optado suporta até 12TB de capacidade básica e pode chegar a 30TB no modo de capacidade comprimida.
+\subsection{Orçamento Total}
+\begin{center}
+\begin{tabular}{| l | r | r | r |}
+\hline 
+Divisão do orçamento & Orçamento Total\\
+\hline
+Softwares & 0\\
+Recursos e Serviços de Redes & 0\\
+Hardwares & 0\\
+Mão de Obra & 28.000,00 R\$\\
+Valor Total do Projeto & 0\\
+\hline
+\end{tabular}
+\end{center}
+\section{Referencias}
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+Disponível em: <https://www.magazineluiza.com.br/access-point-wireless-300mbps-ap360-intelbras-cx-1-un/p/jd4be13c8d/rc/rcnm/?&seller_id=infotechti>. Acesso em: 27 set. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/129456/switch-tp-link-tl-sg1024d-utp-frame-jumbo-10kb-24-portas>. Acesso em: 27 set. 2022.
+Disponível em: <https://www.magazineluiza.com.br/leitor-codigo-de-barras-com-febraban-laser-usb-lcb-180-exbom/p/bh26jj2b8k/pi/lcbr/>. Acesso em: 27 set. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/134854/roteador-routerboard-mikrotik-rb750gr3-hex-5x-portas-ethernet-12603>. Acesso em: 27 set. 2022.
+
+Disponível em: <https://www.magazineluiza.com.br/mini-impressora-portatil-bluetooth-termica-58mm-android-ios/p/dg062c918a/in/ipst/?&seller_id=megaecommerce&utm_source=bing&utm_medium=pla&partner_id=69009&msclkid=8aaf090475281b80238a6a2a7f390596>. Acesso em: 27 set. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/104472/impressora-epson-workforce-m5299-jato-de-tinta-monocromatica-wi-fi-bivolt-m5299?gclid=Cj0KCQjwsrWZBhC4ARIsAGGUJuq_PsGzIOpJCx7KoDGkIT7LmDSrYEZsicRKVoiq7IzqlzzKQjfJqCYaArd-EALw_wcB>. Acesso em: 27 set. 2022.
+
+Disponível em: <https://www.magazineluiza.com.br/microsoft-windows-10-professional-fqc-09478/p/ab6b3ab72j/in/sowa/>. Acesso em: 27 set. 2022.
+Getting Debian. Disponível em: <https://www.debian.org/distrib/>. Acesso em: 12 out. 2022.
+
+Piernet telecom. Disponível em: <http://www8.piernet.com.br/plano/black/>. Acesso em: 12 out. 2022.
+
+PlanaltoNET Sta. Cruz do Rio Pardo. Disponível em: <https://www.planaltonetsantacruz.com.br/>. Acesso em: 12 out. 2022.
+
+Disponível em:
+<https://www.kabum.com.br/produto/170108/microsoft-windows-server-2019-essentials-64-bits-coem-midia-fisica-g3s-01294?srsltid=AR5OiO16qkLTj4dDTt1grODDe0F3TF5U0-tOiRllAtvzyNRNCDUXgbMHcY8>. Acesso em: 29 set. 2022.
+
+Disponível em: <https://nordcheckout.com/pt-br/payment/?product_group=nordvpn&currency=BRL&bundle_type=complete&step2_nav_off=true&cart_id=2258f51e-bc84-471c-a615-de5fc0d663e3>. Acesso em: 5 out. 2022.
+
+Disponível em: <https://www.microsoft.com/pt-br/microsoft-365/enterprise/compare-office-365-plans>. Acesso em: 5 out. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/132024/servidor-lenovo-thinksystem-st50-xeon-e-2224g-4c-71w-3-5ghz-8gb-1tb-7y481002br?srsltid=AR5OiO3hbbgOVjUHZaQ0aVmWT_jpyqxxy4K14aLd3AYx90Rsq3g6Ua_Rg7I>. Acesso em: 5 out. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/89940/memoria-corsair-vengeance-lpx-8gb-2666mhz-ddr4-c16-preto-cmk8gx4m1a2666c16>. Acesso em: 5 out. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/95803/hd-seagate-4tb-barracuda-3-5-sata-st4000dm004>. Acesso em: 5 out. 2022.
+
+squid : Optimising Web Delivery. Disponível em: <http://www.squid-cache.org/.>. Acesso em: 26 out. 2022.
+
+Rolo De Cabo De Rede Cat6 Preto - 305 M - Mk2 Tecno. Disponível em: <https://produto.mercadolivre.com.br/MLB-1332224273-rolo-de-cabo-de-rede-cat6-preto-305-m-mk2-tecno-_JM>. Acesso em: 26 out. 2022.
+
+COBIAN, L. CobianSoft - the home of Cobian backup. Disponível em: <https://www.cobiansoft.com/cobianbackup.html>. Acesso em: 8 nov. 2022.
+
+Disponível em: <https://www.kabum.com.br/produto/271174/nobreak-intelbras-attiv-600va-semi-senoidal-120v-4-tomadas-de-saida-preto-4822200?srsltid=AYJSbAcOON_U_UCSFKOENvwX4UbC0fFAZGMCgNuQj8oBlLpEBAXyTs5s2os>. Acesso em: 8 nov. 2022.
+
+Proxmox - Powerful open-source server solutions. Disponível em: <https://www.proxmox.com/en/>. Acesso em: 9 nov. 2022.
+Disponível em: <https://i.redd.it/a4lxin3ajms31.png>. Acesso em: 9 nov. 2022.
+
+NAGEM. Roteador Intelbras Wireless 300Mbps HotSpot-300, Informática - NAGEM. Disponível em:
+<https://www.nagem.com.br/produto/detalhes/473197/Roteador+Intelbras+Wireless+300Mbps+HotSpot-300>. Acesso em: 9 nov. 2022.
+
+Disponível em: <https://razor.com.br/wp-content/uploads/2020/02/Screen-Shot-2020-02-03-at-14.56.46-600x305.png>. Acesso em: 18 nov. 2022.
+
+LTO8 de fita Media, Pacote com 1, kit de cliente | Dell Brasil. Disponível em: <https://www.dell.com/pt-br/shop/lto8-de-fita-media-pacote-com-1-kit-de-cliente/apd/440-bbiu/armazenamento-e-drives>. Acesso em: 22 nov. 2022.
+
+Small Business. Disponível em: <https://br.norton.com/products/small-business>. Acesso em: 22 nov. 2022.
+
+VeraCrypt - Free Open source disk encryption with strong security for the Paranoid. Disponível em: <https://www.veracrypt.fr/code/VeraCrypt/>. Acesso em: 22 nov. 2022.
+
+Disponível em: <https://razor.com.br/wp-content/uploads/2020/02/Screen-Shot-2020-02-03-at-14.56.46-600x305.png>. Acesso em: 22 nov. 2022a.
+
+Disponível em: <https://www.americanas.com.br/produto/5070308588?opn=YSMESP&offerId=627bb89a87c00289c211510b&srsltid=AYJSbAe6Fa9SdE0FRxRFbVHhFb3n0REGGZvThXw6f29UiQlYOp1AYLkVzcQ>. Acesso em: 22 nov. 2022b.
+\section{Apêndice 1}
+\subsection{Credenciais de acesso as máquinas do ambiente virtual}
+\begin{enumerate}
+    \item ADDS Usuários: FuncioMart\_12
+    \item Debian Web: alunodaete
+    \item Debian DNS: alunodaete
+    \item Debian Samba: alunodaete
+    \item Roteador: alunodaete
+\end{enumerate}
+\end{document}
