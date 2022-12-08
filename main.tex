@@ -124,7 +124,7 @@ Optamos pela solução tanto de software quanto de hardware. Adequando desde das
 O serviço de antivírus que utilizaremos é o Norton, este serviço possui um console e será gerenciado pelo servidor, além de está em plena execução em todas as máquinas dos funcionários ao qual executam o sistema Windows, o objetivo da implementação é garantir uma melhor utilização dos recursos das máquinas, a supervisão sobre as máquinas, a proteção real oferecida pela solução e a capacidade de agendar o fluxo de verificação analítica (que decorre mais tempo e é de extrema importância a não interrupção dos funcionários em tempo de serviço). O plano de verificação analítica propõem o gerenciamento deste fluxo.
 
 \subsection{VPN}
-O serviço de VPN utilizado é o NordVPN, por sua popularidade, facilidade e pelo fácil e rápido suporte técnico. Com o NordVPN podemos trafegar informações confidenciais criptografadas para o mundo externo de maneira segura e rápida. O serviço da Nord será implementado no Routerboard, garantindo assim um acesso seguro à Internet.
+O serviço de VPN utilizado é o NordVPN com o pacote Complete, por sua popularidade, facilidade e pelo fácil e rápido suporte técnico pelo serviço. Com o NordVPN podemos trafegar informações confidenciais criptografadas para o mundo externo de maneira segura e rápida. O serviço da Nord será implementado no Routerboard, garantindo assim um acesso seguro à Internet.
 
 \subsection{Servidor de Arquivos}
 Criamos diretórios no caminho \textbf{“C:/Funcionarios”} no servidor que contém o ADDS (Windows Server) em execução, com o nome de cada setor e através da ferramenta chamada “Gerenciador de Recursos de Servidor de Arquivos” adicionamos as entradas para cada setor com regras de cotas de armazenamento aplicadas de maneira permissivas, possibilitando até mais de 100GB de armazenamento para todos os setores.
@@ -387,6 +387,7 @@ Será realizado diariamente através de um software o backup sem que haja a nece
 É necessário estipular com os demais setores os dados que são de importância para os setores em questão, nem todo tipo de informações criadas pelos funcionários são de importância para o funcionamento da empresa, levando em consideração a não necessidade dos mesmos de possuírem um backup com ou sem versionamento dentro dos servidores corporativos. Ademais, alertar sobre o uso do servidor de arquivos é de extrema importância para os dados considerados importantes para empresa aos funcionários.
 
 \subsubsection{Criptografia Utilizada nos Backups}
+Utilizaremos o já mencionado software VeraCrypt numa partição virtual de no mínimo 1TB, estabelecendo uma partição criptografada com \textbf{"AES SHA 512"} sobre a mesma senha do servidor ADDS (para fins didáticos).
 
 \subsection{Materiais Necessários}
 Utilizaremos o software chamado “\textbf{Cobian Backup}” para realizar a nossa esquematização de backup de forma automática, 1 (uma) vez dentro da semana o software realizará um Backup Total e ao longo da semana, backups incrementais. Para concretizar o backup é de extrema importância possuirmos espaço extra para realizar os backups totais e incrementais, e sempre tentando armazená-los pelo maior tempo possível e de novo, o Cobian nos ajudará a manter esta proposta. Para a criptografia utilizaremos o já mencionando VeraCrypt.
@@ -409,7 +410,7 @@ Windows 10 Pro & 38 & Vitalício & 819,00 R\$ & 31.122,00 R\$\\
 Server 2019 Essentials & 1 & Vitalício & 2.989,00 R\$ & 2.989,00 R\$\\
 Office 365 Enterprises & 38 & Mensal & 76,80 R\$ & 2.918,40 R\$\\
 CCleaner & 38 & Vitalício & - & Gratuito\\
-NordVPN & 1 & 2 Anos & 1.719,90 R\$ & 1.719,90 R\$\\
+NordVPN Complete & 1 & 2 Anos & 1.719,90 R\$ & 1.719,90 R\$\\
 VeraCrypt & 1 & Vitalício & - & Gratuito\\
 Cobian Backup & 38 & Vitalício & - & Gratuito\\
 Proxmox & 1 & Vitalício & - & Gratuito\\
@@ -510,7 +511,7 @@ O AP selecionado possui as seguintes características:
     \item Banda suportada: Até 300Mbps
     \item Potência de transmissão de 630mW (400m2)
     \item Tecnologia Qualcomm: estabilidade e qualidade do sinal
-    \item Adicionais: WI-FI de um fabricante líder em WI-FI \& Exclusivo dispositivo de segurança contra furto
+    \item Adicionais: WI-FI de um fabricante líder em WI-FI \& Exclusivo dispositivo de segurança contra furto!
 \end{enumerate}
 
 \subsubsection{Relógio de Ponto}
