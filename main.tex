@@ -81,116 +81,50 @@ HD - Hard Disk
 GPO - Group Policy Objects
 VPN - Virtual Private Network
 
-\section{Sistemas Operacionais}
+\section{Sistemas Operacionais e Serviços da Rede}
+
+\subsection{Visão por cima}
 Utilizaremos o Windows 10 Pro para os funcionários que irão atender os caixas, setores administrativos integrando também o SAC e com o sistema Debian GNU/Linux versão 11 e Windows Server para os servidores, compondo assim o ambiente integrado de TI. A justificativa da escolha dos sistemas operacionais são esclarecidas abaixo.
 
-\subsection{Windows 10 Pro}
-Optado por fornecer tecnologias em que a integridade de dados da empresa prevalece com o sistemas BitLocker na qual criptografa os recursos presentes nos HD(s), assim protegendo as informações dos usuários. Mensuramos também a capacidade de se aplicar as políticas de grupos, que nos apresentar uma forma de tratar e gerenciar regras definidas para máquinas ou grupos de usuários, utilizaremos esse controle em nossa infraestrutura.
-
-\subsection{Windows Server Essential}
-Irá possuir e fornecer o serviço do Active Directory (ADDS), podendo assim, gerenciar todas as máquinas e clientes envolvidos dentro da rede interna com a ajuda do servidor Debian suprindo as demais funcionalidades e serviços.
-
-\subsection{Debian Server GNU/Linux}
-Com a tecnologia oferecida pela comunidade do Debian, os demais clientes e o servidor Windows Server irão se beneficiar dos serviços oferecidos pelo servidor previamente configurado, fornecendo assim os serviços de DNS; SSH e o SAMBA, esse por sua vez possibilitando a comunicação entre as máquinas Windows com o GNU/Linux.
-
-\section{Serviços Disponibilizados na Rede}
+\subsection{Serviços Disponibilizados na Rede}
 Selecionamos os melhores serviços para fornecer a melhor experiência dentro da rede do supermercado. Segue a lista dos serviços escolhidos e o esclarecimento do porque os escolhemos.
 
 \begin{center}
-\begin{tabular}{| l | r | r | r |}
+\begin{tabular}{| l | r | r | r | r |}
 \hline
-Serviço & Identificador & Disponibilidade\\
+Serviço & Identificador & Disponibilidade & Local de Execução\\
 \hline
-Firewall & 1 & Local\\
-Antivírus & 2 & Local\\
-VPN & 3 & Externa\\
-Servidor de Arquivos & 4 & Local\\
-Armazenamento em Nuvem & 5 & Local\\
-SSH & 6 & Local\\
-DNS & 7 & Local\\
-DHCP & 8 & Local\\
-Samba & 9 & Local\\
-Servidor Web e Proxy & 10 & Local\\
-ADDS & 11 & Local\\
-Hotspot & 12 & Local\\
+Antivírus & 2 & Local & Windows Server + Clientes\\
+ADDS & 11 & Local & Windows Server\\
+Servidor de Arquivos & 4 & Local & Windows Server\\
+SSH & 6 & Local & Debian GNU/Linux\\
+DNS & 7 & Local & Debian GNU/Linux\\
+Samba & 9 & Local & Debian GNU/Linux\\
+Servidor Web e Proxy & 10 & Local & Debian GNU/Linux\\
+VPN & 3 & Externa & MikroTik\\
+DHCP & 8 & Local & MikroTik\\
+Armazenamento em Nuvem & 5 & Local & -\\
+Firewall & 1 & Local & Todas as Máquinas\\
+Hotspot & 12 & Local & -\\
 \hline
 \end{tabular}
 \end{center}
 
-\subsection{Firewall}
-Optamos pela solução tanto de software quanto de hardware. Adequando desde das máquinas dos funcionários até os servidores e garantindo também o controle da nossa rede interna. Os seguintes softwares serão utilizados: Windows Firewall e ufw, para suprir nossas necessidades locais nas demais máquinas dos setores e inclusive o do TI. Já para a rede optamos por utilizar um dispositivo de firewall chamado Fortinet FortiGate do modelo 101F FG-101F.
+\subsection{Windows 10 Pro}
+Optado por fornecer tecnologias em que a integridade de dados da empresa prevalece com o sistemas BitLocker na qual criptografa os recursos presentes nos HD(s), assim protegendo as informações dos usuários. Mensuramos também a capacidade de se aplicar as políticas de grupos, que nos apresentar uma forma de tratar e gerenciar regras definidas para máquinas ou grupos de usuários, utilizaremos esse controle em nossa infraestrutura.
 
-\subsection{Antivírus}
+\subsubsection{Antivírus em Execução}
 O serviço de antivírus que utilizaremos é o Norton, este serviço possui um console e será gerenciado pelo servidor, além de está em plena execução em todas as máquinas dos funcionários ao qual executam o sistema Windows, o objetivo da implementação é garantir uma melhor utilização dos recursos das máquinas, a supervisão sobre as máquinas, a proteção real oferecida pela solução e a capacidade de agendar o fluxo de verificação analítica (que decorre mais tempo e é de extrema importância a não interrupção dos funcionários em tempo de serviço). O plano de verificação analítica propõem o gerenciamento deste fluxo.
 
-\subsection{VPN}
-O serviço de VPN utilizado é o NordVPN com o pacote Complete, por sua popularidade, facilidade e pelo fácil e rápido suporte técnico pelo serviço. Com o NordVPN podemos trafegar informações confidenciais criptografadas para o mundo externo de maneira segura e rápida. O serviço da Nord será implementado no Routerboard, garantindo assim um acesso seguro à Internet.
+\subsection{Windows Server Essential e Seus Serviços}
+Irá possuir e fornecer o serviço do Active Directory (ADDS), podendo assim, gerenciar todas as máquinas e clientes envolvidos dentro da rede interna com a ajuda do servidor Debian suprindo as demais funcionalidades e serviços.
 
-\subsection{Servidor de Arquivos}
-Criamos diretórios no caminho \textbf{“C:/Funcionarios”} no servidor que contém o ADDS (Windows Server) em execução, com o nome de cada setor e através da ferramenta chamada “Gerenciador de Recursos de Servidor de Arquivos” adicionamos as entradas para cada setor com regras de cotas de armazenamento aplicadas de maneira permissivas, possibilitando até mais de 100GB de armazenamento para todos os setores.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[height=0.5\textwidth]{adds-pasta-compartilhada.png}
-\caption{Estrutura de diretórios no servidor ADDS}
-\label{fig:adds-pastas}
-\end{figure}
-
-\subsection{Armazenamento em Nuvem}
-O armazenamento em nuvem será fornecido através do serviço Google Drive com o plano Business Standard, através de seu dashboard somos capazes de analisar, mensurar e realizar o backup a partir do servidor de arquivos.
-
-\subsection{SSH}
-Para a utilização remota do servidor Debian, utilizaremos o openssh para realizar a comunicação de maneira segura e autêntica, garantindo a confiabilidade e o registro (log) do acesso dos administradores ao servidor Linux. Serviço disponibilizado na porta 22 com autenticação por senha e proibição ao usuário root por motivos de segurança.
-
-\subsection{DNS}
-Utilizaremos um serviço privado de DNS dentro da nossa infraestrutura para possibilitar o controle dentre as máquinas dos setores e juntamente com os serviços e impressoras em rede estáticas, podendo assim visualizar e administrar os recursos dentro da nossa rede. Utilizaremos o software bind9 no Debian GNU/Linux para suprir as necessidades.
-
-\subsection{DHCP}
-Para evitar o desgaste de configurar cada dispositivo (impressoras e os computadores) dentro de uma rede onde há a necessidade de haver IP(s) estáticos (como é o caso dos servidores que irão atuar nos IP(s) 192.168.56.2/26 e 192.168.56.3/26) utilizaremos o serviço chamado DHCP no Gateway da MikroTik que irá fornece os IP(s) automaticamente para os dispositivos conectados ao roteador a partir do endereço 192.168.56.11/26. Há em anexo uma lista do tipo de disponibilidade utilizada por cada componente dentro da rede. O tempo máximo da posse do IP por dispositivo é de 15 minutos exatos.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[height=0.5\textwidth]{roteador-dhcp-range.png}
-\caption{Configuração do DHCP}
-\label{fig:dhcp}
-\end{figure}
-
-\newpage
-
-\subsection{Samba}
-O Samba é um serviço utilizado através do GNU/Linux em conjunto ao ADDS, possibilitando o controle e o uso integrados de ambos os serviços. A partir dele poderemos controlar o ADDS através do SSH, o Samba será executado no mesmo servidor onde o DNS está sendo executado, o Debian.
-
-\subsection{Web e Proxy}
-Para o servidor de Proxy, utilizaremos o serviço squid no servidor Debian Linux, através dessa ferramenta seremos capazes de manipular o nó de saída da comunicação interna da rede. O squid trabalha com os seguintes serviços dentro de uma rede: HTTP, HTTPS, FTP; balanceando a carga entre esses serviços. Já sobre o serviço Web, utilizaremos o nginx para hospedar o site da organização.
-
-\subsection{ADDS}
+\subsubsection{ADDS}
 O Active Directory é onde será implementado informações de acesso sobre os usuários, incluindo os usuários e computadores existentes, definindo também as permissões de cada usuário dentro do sistema. Através dele será verificado o fator da autenticidade, ou seja, se a pessoa realmente é quem ela afirma ser.\newline 
 Através do AD, somos capazes de distinguir os grupos perante a suas atividades exercidas dentro da empresa. Por exemplo, podemos definir uma regra básica que ajude aos funcionários do setor do caixa (pertencente ao grupo "Caixas") a executar automaticamente o software de gestão empresarial, possibilitando aos funcionários com poucos cliques “Inicializar a sua área de trabalho”, além da capacidade de mover a área de trabalho de cada usuário nos computadores que fornecem aquele mesma classe de função.
 
-\subsection{Hotspot}
-Através de um roteador conhecido como hotspot podemos disponibilizar a rede WI-FI apenas para os usuários que realizarem o check-in no Facebook, ou que ao conectar, forneça um método de cadastro onde o usuário deve informar o seu endereço de E-mail por exemplo, e logo após isso, liberar a internet.\newline
-Utilizaremos no projeto um roteador da Intelbras do modelo Hotspot 300, ele fornece uma interface de comunicação onde o usuário deve, para poder ter acesso a Internet, realizar o check-in na página do supermercado NeoMart no Facebook.
 
-\section{Sistema de Gestão}
-Utilizaremos o sistema ERP da empresa Bluesoft, disponibilizado pela companhia NeoMart em todas as máquinas dos funcionários da rede. Este software possibilitará:
-
-\begin{enumerate}
-    \item Gerenciamento de preços, estoque e promoções;
-    \item Gestão de etiquetas de preço e balanças;
-    \item Controle de fluxo de caixa e contas a pagar e receber;
-    \item Gestão de bens do empreendimento;
-    \item Controle e gestão de pessoas através do cadastro de funcionários;
-    \item Controle logístico.
-\end{enumerate}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[height=0.2\textwidth]{Logo-bluesoft.png}
-\caption{Logo da Empresa Bluesoft}
-\label{fig:adds-pastas}
-\end{figure}
-
-\section{Controle de Usuários}
+\subsubsection{Controle de Usuários}
 O controle de usuários, realizado no ADDS, nos beneficia desde a criação a administração destes usuários. Os usuários ficaram dispostos em sua unidade organizacional que obedece o seu setor em específico, cada unidade organizacional possui um grupo ao qual possui todos os usuários da unidade em específica, possibilitando de uma maneira mais fácil gerir as permissões destes usuários. Abaixo, um exemplo de como isso funcionará:
 
 \begin{figure}[ht]
@@ -200,7 +134,7 @@ O controle de usuários, realizado no ADDS, nos beneficia desde a criação a ad
 \label{fig:adds-pastas}
 \end{figure}
 
-\subsection{Implementação do GPO}
+\subsubsection{Implementação do GPO}
 O Group Policy (GPO), políticas de grupo ou diretivas de grupo, é através deste recurso que vamos configurar as políticas de cada grupo de usuários dentro do nosso domínio. As configurações ficarão de acordo com a necessidade dos setores:
 
 \begin{center}
@@ -222,12 +156,85 @@ Caixa & 2\\
     \item Nível 2: É proibido o poder de gravação do usuário em mídias graváveis, como por exemplo (Pendrive, Cartão de memória; HD/SSD); É proibido alterar o plano de fundo da máquina. - INCLUI TODAS AS RESTRIÇÕES DO NÍVEL 1.
 \end{enumerate}
 
-\subsection{Demonstração da Implementação das Políticas de Grupo}
+\subsubsection{Demonstração da Implementação das Políticas de Grupo}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[height=0.5\textwidth]{adds-regras.png}
 \caption{Regras do controle de usuários no ADDS}
+\label{fig:adds-pastas}
+\end{figure}
+
+\subsubsection{Servidor de Arquivos}
+Criamos diretórios no caminho \textbf{“C:/Funcionarios”} no servidor que contém o ADDS (Windows Server) em execução, com o nome de cada setor e através da ferramenta chamada “Gerenciador de Recursos de Servidor de Arquivos” adicionamos as entradas para cada setor com regras de cotas de armazenamento aplicadas de maneira permissivas, possibilitando até mais de 100GB de armazenamento para todos os setores.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{adds-pasta-compartilhada.png}
+\caption{Estrutura de diretórios no servidor ADDS}
+\label{fig:adds-pastas}
+\end{figure}
+
+\newpage
+
+\subsection{Debian Server GNU/Linux e Seus Serviços}
+Com a tecnologia oferecida pela comunidade do Debian, os demais clientes e o servidor Windows Server irão se beneficiar dos serviços oferecidos pelo servidor previamente configurado, fornecendo assim os serviços de DNS; SSH e o SAMBA, esse por sua vez possibilitando a comunicação entre as máquinas Windows com o GNU/Linux.
+
+\subsubsection{SSH}
+Para a utilização remota do servidor Debian, utilizaremos o openssh para realizar a comunicação de maneira segura e autêntica, garantindo a confiabilidade e o registro (log) do acesso dos administradores ao servidor Linux. Serviço disponibilizado na porta 22 com autenticação por senha e proibição ao usuário root por motivos de segurança.
+
+\subsubsection{DNS}
+Utilizaremos um serviço privado de DNS dentro da nossa infraestrutura para possibilitar o controle dentre as máquinas dos setores e juntamente com os serviços e impressoras em rede estáticas, podendo assim visualizar e administrar os recursos dentro da nossa rede. Utilizaremos o software bind9 no Debian GNU/Linux para suprir as necessidades.
+
+\subsubsection{Samba}
+O Samba é um serviço utilizado através do GNU/Linux em conjunto ao ADDS, possibilitando o controle e o uso integrados de ambos os serviços. A partir dele poderemos controlar o ADDS através do SSH, o Samba será executado no mesmo servidor onde o DNS está sendo executado, o Debian.
+
+\subsubsection{Web e Proxy}
+Para o servidor de Proxy, utilizaremos o serviço squid no servidor Debian GNU/Linux, através dessa ferramenta seremos capazes de manipular o nó de saída da comunicação interna da rede. O squid trabalha com os seguintes serviços dentro de uma rede: HTTP, HTTPS, FTP; balanceando a carga entre esses serviços. Já sobre o serviço Web, utilizaremos o nginx para hospedar o site da organização rodando sobre a porta 80 (http) e 443 (https).
+
+\subsection{MikroTik}
+
+\subsubsection{VPN}
+O serviço de VPN utilizado é o NordVPN com o pacote Complete, por sua popularidade, facilidade e pelo fácil e rápido suporte técnico pelo serviço. Com o NordVPN podemos trafegar informações confidenciais criptografadas para o mundo externo de maneira segura e rápida. O serviço da Nord será implementado no Routerboard, garantindo assim um acesso seguro à Internet.
+
+\subsubsection{DHCP}
+Para evitar o desgaste de configurar cada dispositivo (impressoras e os computadores) dentro de uma rede onde há a necessidade de haver IP(s) estáticos (como é o caso dos servidores que irão atuar nos IP(s) 192.168.56.2/26 e 192.168.56.3/26) utilizaremos o serviço chamado DHCP no Gateway da MikroTik que irá fornece os IP(s) automaticamente para os dispositivos conectados ao roteador a partir do endereço 192.168.56.11/26. Há em anexo uma lista do tipo de disponibilidade utilizada por cada componente dentro da rede. O tempo máximo da posse do IP por dispositivo é de 15 minutos exatos.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textwidth]{roteador-dhcp-range.png}
+\caption{Configuração do DHCP}
+\label{fig:dhcp}
+\end{figure}
+
+\newpage
+
+\subsection{Firewall}
+Optamos pela solução tanto de software quanto de hardware. Adequando desde das máquinas dos funcionários até os servidores e garantindo também o controle da nossa rede interna. Os seguintes softwares serão utilizados: Windows Firewall e ufw, para suprir nossas necessidades locais nas demais máquinas dos setores e inclusive o do TI. Já para a rede optamos por utilizar um dispositivo de firewall chamado Fortinet FortiGate do modelo 101F FG-101F.
+
+\subsection{Armazenamento em Nuvem}
+O armazenamento em nuvem será fornecido através do serviço Google Drive com o plano Business Standard, através de seu dashboard somos capazes de analisar, mensurar e realizar o backup a partir do servidor de arquivos.
+
+\subsection{Hotspot}
+Através de um roteador conhecido como hotspot podemos disponibilizar a rede WI-FI apenas para os usuários que realizarem o check-in no Facebook, ou que ao conectar, forneça um método de cadastro onde o usuário deve informar o seu endereço de E-mail por exemplo, e logo após isso, liberar a internet.\newline
+Utilizaremos no projeto um roteador da Intelbras do modelo Hotspot 300, ele fornece uma interface de comunicação onde o usuário deve, para poder ter acesso a Internet, realizar o check-in na página do supermercado NeoMart no Facebook.
+
+\section{Sistema de Gestão}
+Utilizaremos o sistema ERP da empresa Bluesoft, disponibilizado pela companhia NeoMart em todas as máquinas dos funcionários da rede. Este software possibilitará:
+
+\begin{enumerate}
+    \item Gerenciamento de preços, estoque e promoções;
+    \item Gestão de etiquetas de preço e balanças;
+    \item Controle de fluxo de caixa e contas a pagar e receber;
+    \item Gestão de bens do empreendimento;
+    \item Controle e gestão de pessoas através do cadastro de funcionários;
+    \item Controle logístico.
+\end{enumerate}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.2\textwidth]{Logo-bluesoft.png}
+\caption{Logo da Empresa Bluesoft}
 \label{fig:adds-pastas}
 \end{figure}
 
@@ -305,7 +312,7 @@ ID da Política & Políticas\\
 \subsection{Detalhes das políticas de segurança}
 
 \subsubsection{Criação de Senhas}
-Criação de Senhas: Cada usuário terá que redefinir sua senha, que deverá respeitar o seguinte padrão: Cada senha deverá conter com no mínimo 12 carácteres sendo eles formador por; números; letras maiúsculas e minúsculas; carácteres especiais (@ \# \$ \&), o usuário também terá limitações nos horários de entrada e de saída e ficará a critério da empresa decidir os horários.
+Criação de Senhas: Cada usuário terá que redefinir sua senha, que deverá respeitar o seguinte padrão: Cada senha deverá conter com no mínimo 12 carácteres sendo eles formador por; números; letras maiúsculas e minúsculas; carácteres especiais (@ \# \$ \& \_), o usuário também terá limitações nos horários de entrada e de saída e ficará a critério da empresa decidir os horários.
 
 \subsubsection{Troca de Senhas}
 Troca de senhas: Os funcionários devem trocar suas senhas dentro de 60 dias (2 meses). Além disso, o funcionário não pode reutilizar as 10 últimas senhas previamente utilizadas em seu usuário.
@@ -323,7 +330,7 @@ Os dados internos como os de faturamentos, indicadores e contratos com parceiros
 \subsubsection{Uso dos Computadores}
 Os usuários deverão respeitar as condutas de uso dos computadores, que são elas: Não plugar dispositivos de armazenamento, como: Pendrive, Cartão de Memória e HD(s)/SSD(s) na máquina; Ao sair da máquina, bloquear-la para evitar possíveis ataques físicos de terceiros à máquina; Reportar potenciais problemas tantos de Software quanto de Hardware ao funcionários do setor de TI.
 
-\subsection{Plano de contingência}
+\subsection{Plano de Contingência}
 Nos dias atuais, se tornou um grande problema algo conhecido como RaaS (Ransomware as a Service) ou Ransomware como serviço, é um tipo de malware extremamente danoso para as empresas e organizações, pois os criminosos que realizam este tipo de ataque tem por objetivo criptografar as informações que são demasiadamente importantes para as empresas e cobrar um ou mais resgates pela mesma, e o maior problema é que o mecanismo de segurança quebrada que possibilita este tipo de invasão é feita de dentro da empresa, por algum funcionário mal intencionado que deseja através do ataque, extorquir a empresa com a ajuda dos atacantes, para se proteger é extremamente importante ter um backup adequado e controlar a entrada e o controle de acesso aos servidores internos de maneira extremamente efetiva.
 
 \subsubsection{Prevenção de Ransomware}
@@ -488,7 +495,7 @@ Os servidores escolhidos serão utilizados para controlar os usuário e fornecer
     \item Fonte - Potência: 250 Watts
 \end{enumerate}
 
-\subsection{MikroTik}
+\subsubsection{MikroTik}
 O roteador utilizado é do modelo Routerboard RB3011IIAS-TM L5, escolhido por possuir a potência necessária para a rede. Características do produto:
 
 \begin{enumerate}
@@ -503,7 +510,7 @@ O roteador utilizado é do modelo Routerboard RB3011IIAS-TM L5, escolhido por po
 \subsubsection{Switch}
 O dispositivo utilizado é da TP-link, modelo Tl-sg1024 ao qual possui 24 portas RJ-45 com compatibilidade para interfaces de até 1Gbps, pode ser montando em racks e possui uma taxa de transferência de até 35.7Mbps, perfeito para suprir nossa demanda e possíveis melhorias nos setores no longo prazo, como aumentar a quantidade de máquinas.
 
-\subsection{Pontos de Acesso}
+\subsubsection{Pontos de Acesso}
 O AP selecionado possui as seguintes características:
 
 \begin{enumerate}
@@ -514,8 +521,8 @@ O AP selecionado possui as seguintes características:
     \item Adicionais: WI-FI de um fabricante líder em WI-FI \& Exclusivo dispositivo de segurança contra furto!
 \end{enumerate}
 
-\subsubsection{Relógio de Ponto}
-O relógio de ponto escolhido possui suporte a biometria.
+\subsubsection{Ponto Biométrico}
+Optamos por escolher um dispositivo conhecido como "Ponto Biométrico" que registrará as entradas e saídas em referência aos dois servidores físicos da rede. O propósito é garantir a maior segurança visando a disponibilidade e integridade dos servidores e ao próprio não-repúdio.
 
 \subsubsection{Hotspot}
 O dispositivo foi escolhido com o foco na plasticidade e confortabilidade, já que o requisito para acessar a internet é feito através da realização do check-in no Facebook, uma tarefa prática e fácil além da configuração do roteador ser bastante facilitada pelo próprio sistema da Intelbras.
